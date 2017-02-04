@@ -4,7 +4,11 @@ var element = document.getElementById('main-text');
 element.innerHTML = "Changed value here..";
 //move the image 
 var img = document.getElementById('jca');
+var marginLeft = 0;
+function moveRight () {
+    marginLeft = marginLeft + 1;
+     img.style.marginLeft = marginLeft + "px";
+}
 img.onclick = function () {
-    console.log('clicked!');
-    img.style.marginLeft = "100px";  
+    var interval = setInterval(moveRight, 100);
 };
