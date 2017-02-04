@@ -1,20 +1,10 @@
-<!doctype html>
-<html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div id='jca' class="center">
-            <img src="/ui/jithin.jpg" class="img-medium"/>
-        </div>
-        <br>
-        <div id='main-text' class="center text-big bold">
-          Jithin Antony
-			<h5>Education : Graduated</h5>
-			<h5>Status : Attending online course from IITM</h5>
-			<h5>Contact : jithinantony333@gmail.com</h5>
-        </div>
-        <script type="text/javascript" src="/ui/main.js">
-        </script>
-    </body>
-</html>
+console.log('Loaded!');
+//change the text of the main-text div
+var element = document.getElementById('main-text');
+element.innerHTML = "Changed value here..";
+//move the image 
+var img = document.getElementById('jca');
+img.onClick = function () {
+    console.log('clicked!');
+    img.style.marginLeft = "100px";  
+};
