@@ -5,6 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: 'Article One | Jithin Antony',
+    heading: 'Article One',
+    date: 'Jan 4, 2017',
+    content: `
+        <p>
+            This is the content for my first aricle 
+        </p>`
+};
+
+function createTemplate(data){
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
+    
+}
+
 app.get('/article-one', function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
