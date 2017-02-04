@@ -4,7 +4,7 @@ var element = document.getElementById('main-text');
 element.innerHTML = "Changed value here..";
 //move the image 
 var img = document.getElementById('jca');
-img.onClick = function(){
+img.onClick = function () {
     console.log('clicked!');
     img.style.marginLeft = "100px";  
 };
