@@ -5,5 +5,5 @@ element.innerHTML = "Changed value here..";
 //move the image 
 var img = document.getElementById('jca');
 img.onClick = function(){
-  img.style.marginLeft = "100px"  ;
+  img.style.marginLeft = '100px'  ;
 };
