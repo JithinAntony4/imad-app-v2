@@ -24,7 +24,7 @@ button.onclick = function(){
 };
 
 //Submit comment
-var comment_btn = document.getElementById('submit_comment_btn');
+var commentbtn = document.getElementById('submit_comment_btn');
 comment_btn.onClick = function() {
     //Create a request object
     var request = new XMLHttpRequest();
