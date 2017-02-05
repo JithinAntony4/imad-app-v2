@@ -95,13 +95,13 @@ app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
     res.send(JSON.stringify(names)); 
 });
 
-var names = [];
+var comments = [];
 app.get('/submit-comment', function (req, res) { //URL : ../submit-comment?comment=xxxx
     //get the name from request
     var comment = req.query.comment;
-    names.push(name);
+    comments.push(comment);
     //JSON JavaScript Object Notation
-    res.send(JSON.stringify(names)); 
+    res.send(JSON.stringify(comments)); 
 });
 
 app.get('/:articleName', function(req,res){
