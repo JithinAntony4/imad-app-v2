@@ -6,7 +6,7 @@ button.onclick = function(){
     //make request counter end point
     var request = new XMLHttpRequest();
     //capture the variable and store it on variable
-    request.onreadystatechanged = funtion() {
+    request.onreadystatechanged = function () {
       if (request.readyState === XMLHttpRequest.DONE) {
           //Take action
       }
