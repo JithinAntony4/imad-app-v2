@@ -10,6 +10,7 @@ button.onclick = function(){
       if (request.readyState === XMLHttpRequest.DONE) {
           //Take action
       }
+      //Not done yet
     };
     //Render the variable in correct span
     counter = counter + 1;
