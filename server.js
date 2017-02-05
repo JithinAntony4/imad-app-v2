@@ -103,7 +103,7 @@ app.get('/ui/jithin.jpg', function (req, res) {
 var names = [];
 app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
     //get the name from request
-    var name = req.params.name;
+    var name = req.query.name;
     names.push(name);
     //JSON JavaScript Object Notation
     res.send(JSON.stringify(names)); 
