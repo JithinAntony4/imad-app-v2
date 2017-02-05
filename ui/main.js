@@ -55,7 +55,7 @@ submit.onclick = function() {
 };
 //Submit comment
 var comment_btn = document.getElementById('submit_comment_btn');
-comment_btn.onclick = function() {
+comment_btn.onClick = function() {
     //Create a request object
     var request = new XMLHttpRequest();
     //capture the variable and store it on variable
