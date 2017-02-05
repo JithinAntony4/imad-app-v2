@@ -96,7 +96,7 @@ app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
 });
 
 var comments = [];
-app.get('/submit-comment', function (req, res) { //URL : ../submit-comment?comment=xxxx
+app.get('article-one/submit-comment', function (req, res) { //URL : ../submit-comment?comment=xxxx
     //get the name from request
     var comment = req.query.comment;
     comments.push(comment);
