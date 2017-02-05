@@ -10,6 +10,7 @@ button.onclick = function(){
           //Take action
           //200 means request is successfully completed
           if (request.status === 200) {
+              console.log('in request.status');
               var counter = request.responseText;
               var span = document.getElementById('count');
               span.innerHTML = counter.toString();
