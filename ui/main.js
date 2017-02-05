@@ -65,13 +65,13 @@ comment_btn.onclick = function() {
           //200 means request is successfully completed
           if (request.status === 200) {
             //Capture a list of comment and render it as list
-            var names = request.responseText;
-            names = JSON.parse(names);
+            var comments = request.responseText;
+            comments = JSON.parse(comments);
             var list = '';
-            for (var i = 0; i < names.length; i++) {
-                list += '<li>' + names[i] + '</li>';
+            for (var i = 0; i < comments.length; i++) {
+                list += '<li>' + comments[i] + '</li>';
             }
-            var ul = document.getElementById('name_comment_list');
+            var ul = document.getElementById('comment_list');
             ul.innerHTML = list;
           }
       }
