@@ -5,7 +5,7 @@ button.onclick = function(){
     //Create a request object
     var request = new XMLHttpRequest();
     //capture the variable and store it on variable
-    request.onreadystatechanged = function () {
+    request.onreadystatechange = function () {
       if (request.readyState === XMLHttpRequest.DONE) {
           //Take action
           //200 means request is successfully completed
