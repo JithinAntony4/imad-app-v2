@@ -78,8 +78,8 @@ comment_btn.onclick = function() {
       //Not done yet
     };
     //Make a request
-    var nameInput = document.getElementById('name_input');
+    var nameInput = document.getElementById('comment_input');
     var name = nameInput.value;
-    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/submit-comment?comment=' + name, true);
     request.send(null);
 };
