@@ -95,6 +95,15 @@ app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
     res.send(JSON.stringify(names)); 
 });
 
+var names = [];
+app.get('/submit-comment', function (req, res) { //URL : ../submit-comment?comment=xxxx
+    //get the name from request
+    var comment = req.query.comment;
+    names.push(name);
+    //JSON JavaScript Object Notation
+    res.send(JSON.stringify(names)); 
+});
+
 app.get('/:articleName', function(req,res){
     //articleName == article-one
     //articles[articleName] == {} content object for article one
