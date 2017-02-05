@@ -9,7 +9,7 @@ button.onclick = function(){
       if (request.readyState === XMLHttpRequest.DONE) {
           //Take action
           //200 means request is successfully completed
-          if (request === 200) {
+          if (request.status === 200) {
               var counter = request.responseText;
               var span = document.getElementById('count');
               span.innerHTML = counter.toString();
