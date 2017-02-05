@@ -101,6 +101,7 @@ app.get('/ui/jithin.jpg', function (req, res) {
 });
 
 app.get('/submit-name', function (req, res) {
+    //get the name from request
     
 });
 
