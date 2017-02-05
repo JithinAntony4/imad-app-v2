@@ -69,7 +69,7 @@ function createTemplate(data){
         <div class='footer'>
             <input type="text" id="comment_input" placeholder="Enter your comment here.." />
             <input type="submit" value="Submit" id="submit_comment_btn" />
-            <ul id="name_comment_list">
+            <ul id="comment_list">
                 
             </ul>
         </div>
