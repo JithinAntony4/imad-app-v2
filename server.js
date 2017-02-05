@@ -110,7 +110,12 @@ app.get('/:articleName', function(req,res){
     //articleName == article-one
     //articles[articleName] == {} content object for article one
     var articleName = req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
+    switch (articleName.toString()) {
+        case "article-one":
+            res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+            break;
+    }
+    //res.send(createTemplate(articles[articleName]));
 });
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
