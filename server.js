@@ -88,15 +88,6 @@ app.get('/counter', function(req,res){
    res.send(counter.toString());
 });
 
-var names = [];
-app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
-    //get the name from request
-    var name = req.query.name;
-    names.push(name);
-    //JSON JavaScript Object Notation
-    res.send(JSON.stringify(names)); 
-});
-
 var comments = [];
 app.get('/submit-comment', function (req, res) { //URL : ../submit-comment?comment=xxxx
     //get the name from request
@@ -104,6 +95,15 @@ app.get('/submit-comment', function (req, res) { //URL : ../submit-comment?comme
     comments.push(comment);
     //JSON JavaScript Object Notation
     res.send(JSON.stringify(comments)); 
+});
+
+var names = [];
+app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
+    //get the name from request
+    var name = req.query.name;
+    names.push(name);
+    //JSON JavaScript Object Notation
+    res.send(JSON.stringify(names)); 
 });
 
 app.get('/:articleName', function(req,res){
