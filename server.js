@@ -103,7 +103,7 @@ app.get('/ui/jithin.jpg', function (req, res) {
 var names = [];
 app.get('/submit-name/:name', function (req, res) {
     //get the name from request
-    var name; //TODO
+    var name = req.params.name;
     names.push(name);
     res.send(names); //TODO
 });
