@@ -4,9 +4,13 @@ var counter = 0;
 button.onclick = function(){
     
     //make request counter end point
-    
+    var request = new XMLHttpRequest();
     //capture the variable and store it on variable
-    
+    request.onreadystatechanged = funtion() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          //Take action
+      }
+    };
     //Render the variable in correct span
     counter = counter + 1;
     var span = document.getElementById('count');
