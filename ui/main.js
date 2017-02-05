@@ -22,3 +22,7 @@ button.onclick = function(){
     request.open('GET', 'http://jithinantony4.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+//Submit name
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submitBtn = document.getElementById('submit');
