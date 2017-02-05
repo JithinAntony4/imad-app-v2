@@ -2,7 +2,7 @@
 var button = document.getElementById('counter');
 button.onclick = function(){
     
-    //make request counter end point
+    //Create a request object
     var request = new XMLHttpRequest();
     //capture the variable and store it on variable
     request.onreadystatechanged = function () {
