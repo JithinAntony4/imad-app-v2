@@ -28,5 +28,11 @@ var name = nameInput.value;
 var submit = document.getElementById('submit');
 submit.onclick = function() {
     //Make request to server and send the name
+    
     //Capture a list of names and render it as list
+    var names = ['name', 'name2', 'name3'];
+    var list = '';
+    for (var i = 0; i < names.length; i++) {
+        
+    }
 };
