@@ -36,7 +36,14 @@ submit.onclick = function() {
           //Take action
           //200 means request is successfully completed
           if (request.status === 200) {
-             
+            //Capture a list of names and render it as list
+            var names = ['name', 'name2', 'name3', 'name4'];
+            var list = '';
+            for (var i = 0; i < names.length; i++) {
+                list += '<li>' + names[i] + '</li>';
+            }
+    var ul = document.getElementById('name_list');
+    ul.innerHTML = list;
           }
       }
       //Not done yet
@@ -44,12 +51,4 @@ submit.onclick = function() {
     //Make a request
     request.open('GET', 'http://jithinantony4.imad.hasura-app.io/counter', true);
     request.send(null);
-    //Capture a list of names and render it as list
-    var names = ['name', 'name2', 'name3', 'name4'];
-    var list = '';
-    for (var i = 0; i < names.length; i++) {
-        list += '<li>' + names[i] + '</li>';
-    }
-    var ul = document.getElementById('name_list');
-    ul.innerHTML = list;
 };
