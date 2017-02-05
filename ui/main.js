@@ -27,8 +27,23 @@ var nameInput = document.getElementById('name_input');
 var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
-    //Make request to server and send the name
-    
+      
+    //Create a request object
+    var request = new XMLHttpRequest();
+    //capture the variable and store it on variable
+    request.onreadystatechange = function () {
+      if (request.readyState === XMLHttpRequest.DONE) {
+          //Take action
+          //200 means request is successfully completed
+          if (request.status === 200) {
+             
+          }
+      }
+      //Not done yet
+    };
+    //Make a request
+    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/counter', true);
+    request.send(null);
     //Capture a list of names and render it as list
     var names = ['name', 'name2', 'name3', 'name4'];
     var list = '';
