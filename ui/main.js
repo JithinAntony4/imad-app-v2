@@ -18,5 +18,6 @@ button.onclick = function(){
       //Not done yet
     };
     //Make a request
-    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/counter', true)
+    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/counter', true);
+    request.send(null);
 };
