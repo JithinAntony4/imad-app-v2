@@ -54,7 +54,7 @@ submit.onclick = function() {
     request.send(null);
 };
 //Submit comment
-var comment_btn = document.getElementById('submit_comment_btn')
+var comment_btn = document.getElementById('submit_comment_btn');
 comment_btn.onclick = function() {
     //Create a request object
     var request = new XMLHttpRequest();
