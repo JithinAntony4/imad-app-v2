@@ -10,7 +10,6 @@ button.onclick = function(){
           //Take action
           //200 means request is successfully completed
           if (request.status === 200) {
-              console.log('in request.status');
               var counter = request.responseText;
               var span = document.getElementById('count');
               span.innerHTML = counter.toString();
@@ -58,6 +57,7 @@ submit.onclick = function(){
 //Submit comment
 var commentbtn = document.getElementById('submit_comment_btn');
 commentbtn.onclick = function () {
+    console.log('clicked comment btn');
     //Create a request object
     var request = new XMLHttpRequest();
     //capture the variable and store it on variable
