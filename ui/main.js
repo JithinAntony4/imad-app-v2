@@ -9,6 +9,10 @@ button.onclick = function(){
     request.onreadystatechanged = function () {
       if (request.readyState === XMLHttpRequest.DONE) {
           //Take action
+          //200 means request is successfully completed
+          if (request === 200) {
+              
+          }
       }
       //Not done yet
     };
