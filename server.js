@@ -102,7 +102,7 @@ app.get('/ui/jithin.jpg', function (req, res) {
 
 app.get('/submit-name', function (req, res) {
     //get the name from request
-    
+    var name; //TODO
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
