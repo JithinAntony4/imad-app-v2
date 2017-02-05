@@ -101,7 +101,7 @@ app.get('/ui/jithin.jpg', function (req, res) {
 });
 
 var names = [];
-app.get('/submit-name', function (req, res) {
+app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
     //get the name from request
     var name = req.params.name;
     names.push(name);
