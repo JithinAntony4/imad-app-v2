@@ -123,10 +123,11 @@ app.get('/article/:articleName', function(req,res){
                  res.status(404).send('Article not found');
             } else {
                 var articleData = results.row[0];
+                res.send(createTemplate(articleData));
             }
         }
     });
-    res.send(createTemplate(articleData));
+    
 });
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
