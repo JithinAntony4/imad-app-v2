@@ -115,10 +115,17 @@ app.get('/submit-name', function (req, res) { //URL : ../submit-name?name=xxxx
 app.get('/article/:articleName', function(req,res){
     //articleName == article-one
     //articles[articleName] == {} content object for article one
-    var articleName = req.params.articleName;
-    
-    pool.query("SELECT * FROM article WHERE title = " + req.params.articleName);
-    var articleData =
+    pool.query("SELECT * FROM article WHERE title = " + req.params.articleName, function(err, results){
+        if(err){
+            res.status(500).send(err.toString());
+        } else {
+            if(results.row.length === 0){
+                 res.status(404).send('Article not found');
+            } else {
+                var articleData = results.row[0];
+            }
+        }
+    });
     res.send(createTemplate(articleData));
 });
 app.get('/', function (req, res) {
