@@ -117,6 +117,7 @@ app.get('/', function (req, res) {
 
 app.get('/test-db', function (req, res){
     //make a select request
+    //return a response with results
 });
 
 app.get('/ui/style.css', function (req, res) {
