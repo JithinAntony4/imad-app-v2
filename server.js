@@ -19,7 +19,10 @@ function hash(input, salt){
 }
 
 app.get('/create-user', function(req, res){
-    
+    //username and password
+    var salt = crypto.getRandomBytes(128).toString('hex');
+    var dbString = hash(password, salt);
+    Pool.query('INSERT INTO "user" (username,password) VALUES($1,$2)')
 });
 
 app.get('/hash/:input', function(req, res){
