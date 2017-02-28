@@ -13,7 +13,8 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('hash/:input', function(req, res){
-    
+    var hashString = hash(req.params.input);
+    res.send(hashString);
 });
 
 function createTemplate(data){
