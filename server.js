@@ -35,8 +35,9 @@ app.get('login', function(req, res){
                 var hasedpassword = hash(password, salt);
                 if(hasedpassword === dbString){
                      res.send('Credentials correct');
+                } else {
+                    res.send('403').send('username/password is invalid');
                 }
-                res.send('User successfully created : ' + username);
             }
         }
     });
