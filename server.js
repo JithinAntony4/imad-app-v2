@@ -18,6 +18,10 @@ function hash(input, salt){
     return ['pbkdf2',"10000", salt, hashed.toString('hex')].join('$');
 }
 
+app.get('/create-user', function(req, res){
+    
+});
+
 app.get('/hash/:input', function(req, res){
     var hashString = hash(req.params.input, 'this-is-some-random-string');
     res.send(hashString);
