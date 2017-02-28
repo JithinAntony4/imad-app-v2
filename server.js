@@ -32,6 +32,7 @@ app.get('login', function(req, res){
             }else {
                 var dbString = result.row[0].password;
                 var salt = dbString.split('$')[2];
+                var hasedpassword = hash(password, salt);
                 res.send('User successfully created : ' + username);
             }
         }
