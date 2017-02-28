@@ -20,6 +20,7 @@ function hash(input, salt){
 
 app.post('/create-user', function(req, res){
     //username and password
+    //assume JSON is passing
     var username = req.body.username;
     var password = req.body.password;
     var salt = crypto.getRandomBytes(128).toString('hex');
