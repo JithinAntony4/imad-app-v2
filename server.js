@@ -33,6 +33,9 @@ app.get('login', function(req, res){
                 var dbString = result.row[0].password;
                 var salt = dbString.split('$')[2];
                 var hasedpassword = hash(password, salt);
+                if(hasedpassword === dbString){
+                     res.send('Creditional correct');
+                }
                 res.send('User successfully created : ' + username);
             }
         }
