@@ -13,12 +13,13 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-function hash(input){
+function hash(input, salt){
     var hashed = crypto.pbkdf25sync(input, salt, 10000, 512, 'sha512');
+    return hashed;
 }
 
 app.get('hash/:input', function(req, res){
-    var hashString = hash(req.params.input);
+    var hashString = hash(req.params.input, 'this-is-some-random-string');
     res.send(hashString);
 });
 
