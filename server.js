@@ -12,6 +12,10 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
+app.get('hash/:input', function(req, res){
+    
+});
+
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
