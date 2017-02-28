@@ -30,6 +30,8 @@ app.get('login', function(req, res){
             if(result.rows.length === 0){
                 res.send('403').send('username/password is invalid');
             }else {
+                var dbString = result.row[0].password;
+                var salt = dbString.split('$')[2];
                 res.send('User successfully created : ' + username);
             }
         }
