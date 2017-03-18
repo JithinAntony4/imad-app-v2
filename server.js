@@ -23,7 +23,7 @@ function hash(input, salt){
 app.get('login', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
-ool.query('SELECT * FROM "user" WHERE username=$1',[username], function(err, result){
+    pool.query('SELECT * FROM "user" WHERE username=$1',[username], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else {
@@ -50,7 +50,7 @@ app.post('/create-user', function(req, res){
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
-ool.query('INSERT INTO "user" (username,password) VALUES($1,$2)',[username,dbString], function(err, result){
+    pool.query('INSERT INTO "user" (username,password) VALUES($1,$2)',[username,dbString], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else {
