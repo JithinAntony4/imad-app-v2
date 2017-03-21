@@ -64,52 +64,50 @@ app.get('/hash/:input', function(req, res){
     res.send(hashString);
 });
 
-function createTemplate(data){
+function createTemplate (data) {
     var title = data.title;
-    var heading = data.heading;
     var date = data.date;
+    var heading = data.heading;
     var content = data.content;
+    
     var htmlTemplate = `
     <html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <meta name="viewport cotent=" width="device-width, initial-scale=1" />
-        <link href="/ui/style.css" rel="stylesheet" />
-
-    </head>
-    <body>
-        <div class="container">
-        <div>
-            <a href="/">Home</a>
-        </div>
-        <hr/>
-        <h3>
-            ${heading}
-        </h3>
-        <div>
-            ${date.toDateString()}
-        </div>
-        <div>
-            ${content}
-        </div>
-        <hr/>
-        <div class='footer'>
-            <input type="text" id="comment_input" placeholder="Enter your comment here.." />
-            <input type="submit" value="Comment" id="comment_btn" />
-            <ul id="comment_list">
-            </ul>
-        </div>
-        </div>
-        <script type="text/javascript" src="/ui/comment.js">
-        </script>
-    </body>
-</html>`
-;
- return htmlTemplate;  
+      <head>
+          <title>
+              ${title}
+          </title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="/ui/style.css" rel="stylesheet" />
+      </head> 
+      <body>
+          <div class="container">
+              <div>
+                  <a href="/">Home</a>
+              </div>
+              <hr/>
+              <h3>
+                  ${heading}
+              </h3>
+              <div>
+                  ${date.toDateString()}
+              </div>
+              <div>
+                ${content}
+              </div>
+              <hr/>
+              <h4>Comments</h4>
+              <div id="comment_form">
+              </div>
+              <div id="comments">
+                <center>Loading comments...</center>
+              </div>
+          </div>
+          <script type="text/javascript" src="/ui/article.js"></script>
+      </body>
+    </html>
+    `;
+    return htmlTemplate;
 }
-
 var counter = 0;
 app.get('/counter', function(req,res){
    counter = counter + 1;
