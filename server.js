@@ -186,22 +186,6 @@ app.get('/test-db', function (req, res){
     });
     //return a response with results
 });
-
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-
-app.get('/ui/comment.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'comment.js'));
-});
-
-app.get('/ui/jithin.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'jithin.jpg'));
-});
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results
