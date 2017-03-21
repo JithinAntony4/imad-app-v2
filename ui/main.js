@@ -1,3 +1,4 @@
+
 function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
@@ -34,7 +35,7 @@ function loadLoginForm () {
           }  
           // Not done yet
         };
-                
+        
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
@@ -46,6 +47,7 @@ function loadLoginForm () {
         submit.value = 'Logging in...';
         
     };
+    
     var register = document.getElementById('register_btn');
     register.onclick = function () {
         // Create a request object
@@ -77,34 +79,61 @@ function loadLoginForm () {
     
     };
 }
-//Submit name
-var submit = document.getElementById('submit_btn');
-submit.onclick = function(){
-      
-    //Create a request object
+
+function loadLoggedInUser (username) {
+    var loginArea = document.getElementById('login_area');
+    loginArea.innerHTML = `
+        <h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>
+    `;
+}
+
+function loadLogin () {
+    // Check if the user is already logged in
     var request = new XMLHttpRequest();
-    //capture the variable and store it on variable
     request.onreadystatechange = function () {
-      if (request.readyState === XMLHttpRequest.DONE) {
-          //Take action
-          //200 means request is successfully completed
-          if (request.status === 200) {
-            //Capture a list of names and render it as list
-            var names = request.responseText;
-            names = JSON.parse(names);
-            var list = '';
-            for (var i = 0; i < names.length; i++) {
-                list += '<li>' + names[i] + '</li>';
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                loadLoggedInUser(this.responseText);
+            } else {
+                loadLoginForm();
             }
-            var ul = document.getElementById('name_list');
-            ul.innerHTML = list;
-          }
-      }
-      //Not done yet
+        }
     };
-    //Make a request
-    var nameInput = document.getElementById('name_input');
-    var name = nameInput.value;
-    request.open('GET', 'http://jithinantony4.imad.hasura-app.io/submit-name?name=' + name, true);
+    
+    request.open('GET', '/check-login', true);
     request.send(null);
-};
+}
+
+function loadArticles () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var articles = document.getElementById('articles');
+            if (request.status === 200) {
+                var content = '<ul>';
+                var articleData = JSON.parse(this.responseText);
+                for (var i=0; i< articleData.length; i++) {
+                    content += `<li>
+                    <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
+                    (${articleData[i].date.split('T')[0]})</li>`;
+                }
+                content += "</ul>"
+                articles.innerHTML = content;
+            } else {
+                articles.innerHTML('Oops! Could not load all articles!')
+            }
+        }
+    };
+    
+    request.open('GET', '/get-articles', true);
+    request.send(null);
+}
+
+
+// The first thing to do is to check if the user is logged in!
+loadLogin();
+
+// Now this is something that we could have directly done on the server-side using templating too!
+loadArticles();
