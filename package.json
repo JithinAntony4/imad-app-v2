@@ -1,15 +1,36 @@
 {
-  "name": "imad-2016-base",
+  "name": "RedGoral",
   "version": "0.1.0",
-  "description": "IMAD 2016 course app",
+  "description": "RedGoral Official Website",
   "main": "server.js",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/JithinAntony4/RedGoralSite/blob/master/LICENSE"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jithin Antony",
   "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^1.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JithinAntony4/RedGoralSite.git"
+  },
   "dependencies": {
     "express": "^4.14.0",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+     "simple-line-icons": "^2.3.2"
   }
 }
